@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3cbd1887-8e6f-4490-9fe2-8db7605be7c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/ItmoMastersProgrammingLab2Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/dto/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/repository/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/io/github/mityavasilyev/itmomastersprogramminglab2/ItmoMastersProgrammingLab2ApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2esKeBj8uRNYubd5H8WR3KdvKN3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "cfc3d78303aa95dda219454274e2ad45",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ItmoMastersProgrammingLab2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="itmo-masters-programming-lab-2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.mityavasilyev.itmomastersprogramminglab2.ItmoMastersProgrammingLab2Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.mityavasilyev.itmomastersprogramminglab2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ItmoMastersProgrammingLab2Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3cbd1887-8e6f-4490-9fe2-8db7605be7c7" name="Changes" comment="" />
+      <created>1712687939051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712687939051</updated>
+      <workItem from="1712687940301" duration="11731000" />
+      <workItem from="1712758638347" duration="499000" />
+      <workItem from="1712773361562" duration="503000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/io/github/mityavasilyev/itmomastersprogramminglab2/service/UserDetailsServiceImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
