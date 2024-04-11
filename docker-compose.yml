@@ -1,0 +1,12 @@
+version: '3'
+services:
+ server:
+    build: ./server
+    image: server:latest
+    ports:
+      - 8080:8080
+ frontend:
+    build: ./frontend/lab-2-app
+    image: frontend:latest
+    ports:
+      - 3000:3000
