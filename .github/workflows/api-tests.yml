@@ -21,18 +21,18 @@ jobs:
 
       - name: Run Server in Docker
         run: |
-          docker run -d --network=host --name server server:latest
-          
-          echo "Waiting for server to start..."
-          for i in {1..10}; do
-            if nc -z localhost 1234; then
-              echo "Server is up."
-              break
-            else
-              echo "Waiting... $i"
-              sleep 5
-            fi
-          done
+            docker run -d --network=host --name server server:latest
+            
+            echo "Waiting for server to start..."
+            for i in {1..10}; do
+              if nc -z localhost 8080; then
+                echo "Server is up."
+                break
+              else
+                echo "Waiting... $i"
+                sleep 5
+              fi
+            done
 
 
       - name: Run Tests
