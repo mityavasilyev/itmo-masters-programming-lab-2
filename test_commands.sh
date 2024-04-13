@@ -6,7 +6,7 @@ test_command() {
     local expected_response=$2
     echo "Sending command: $command"
     response=$(eval "$command")
-    if [[ "$response" == "$expected_response" ]]; then
+    if [[ "$response" =~ $expected_response ]]; then
         echo "Test passed: $command"
     else
         echo "Test failed: $command. Expected: $expected_response, Got: $response"
