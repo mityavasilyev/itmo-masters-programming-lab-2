@@ -5,7 +5,7 @@ test_command() {
     local command=$1
     local expected_response=$2
     echo "Sending command: $command"
-    response=$(echo "$command" | curl -s --max-time 5)
+    response=$(eval "$command")
     if [[ "$response" == "$expected_response" ]]; then
         echo "Test passed: $command"
     else
