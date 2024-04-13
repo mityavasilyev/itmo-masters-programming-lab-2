@@ -16,7 +16,7 @@ jobs:
 
       - name: Build Docker Images
         run: |
-          cd ../server
+          cd server
           docker build -t server:latest .
 
       - name: Run Server in Docker
