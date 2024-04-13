@@ -35,13 +35,13 @@ test_command "curl --location --request POST 'localhost:8080/api/users/login' --
 test_command "curl --location 'localhost:8080/api/messages' --header 'Content-Type: application/json' --header '$basic_auth_header' --data '{\"content\": \"Privet loshara\",\"receiverUsername\": \"loshara\"}'" 'length > 0'
 
 # Verify sent messages
-test_command "curl --location --request POST 'localhost:8080/api/messages/sent' --header '$basic_auth_header' --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7'" '.content == "Privet loshara" and .senderUsername == "boba" and .receiverUsername == "loshara"'
+test_command "curl --location --request POST 'localhost:8080/api/messages/sent' --header '$basic_auth_header' --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7'" 'any(.content == "Privet loshara" and .senderUsername == "boba" and .receiverUsername == "loshara")'
 
 # Create another user
 test_command "curl --location 'localhost:8080/api/users' --header 'Content-Type: application/json' --data '{\"username\": \"loshara\",\"password\": \"loshara\"}'" '.username == "loshara"'
 basic_auth_header=$(generate_basic_auth_header "loshara" "loshara")
 
 # Verify received messages
-test_command "curl --location --request POST 'localhost:8080/api/messages/received' --header '$basic_auth_header' --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7'" '.content == "Privet loshara" and .senderUsername == "boba" and .receiverUsername == "loshara"'
+test_command "curl --location --request POST 'localhost:8080/api/messages/received' --header '$basic_auth_header' --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7'" 'any(.content == "Privet loshara" and .senderUsername == "boba" and .receiverUsername == "loshara")'
 
 echo "All tests passed."
