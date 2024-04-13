@@ -24,7 +24,7 @@ generate_basic_auth_header() {
 
 # Test commands
 # Create user
-test_command "curl --location 'localhost:8080/api/users' --header 'Content-Type: application/json' --data '{\"username\": \"boba\",\"password\": \"boba\"}'" "{\"id\": [0-9]+,\"username\": \"boba\"}"
+test_command "curl --location 'localhost:8080/api/users' --header 'Content-Type: application/json' --data '{\"username\": \"boba\",\"password\": \"boba\"}'" "{\"id\":[0-9]+,\"username\": \"boba\",\"password\":\".*\"}"
 basic_auth_header=$(generate_basic_auth_header "boba" "boba")
 
 # Login user
@@ -37,7 +37,7 @@ test_command "curl --location 'localhost:8080/api/messages' --header 'Content-Ty
 test_command "curl --location --request POST 'localhost:8080/api/messages/sent' --header '$basic_auth_header' --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7'" "{\"id\": [0-9]+,\"content\": \"Privet loshara\",\"senderUsername\": \"boba\",\"receiverUsername\": \"loshara\"}"
 
 # Create another user
-test_command "curl --location 'localhost:8080/api/users' --header 'Content-Type: application/json' --data '{\"username\": \"loshara\",\"password\": \"loshara\"}'" "{\"id\": [0-9]+,\"username\": \"loshara\"}"
+test_command "curl --location 'localhost:8080/api/users' --header 'Content-Type: application/json' --data '{\"username\": \"loshara\",\"password\": \"loshara\"}'" "{\"id\":[0-9]+,\"username\": \"loshara\",\"password\":\".*\"}"
 basic_auth_header=$(generate_basic_auth_header "loshara" "loshara")
 
 # Verify received messages
