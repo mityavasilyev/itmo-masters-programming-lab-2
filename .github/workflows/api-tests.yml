@@ -1,0 +1,95 @@
+name: API Tests
+
+on:
+ push:
+    branches:
+      - main
+
+jobs:
+ test-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create user
+        run: |
+          response=$(curl --location 'localhost:8080/api/users' \
+            --header 'Content-Type: application/json' \
+            --data '{
+                "username": "boba",
+                "password": "boba"
+            }')
+          echo "Response: $response"
+          # Check if the user was created successfully
+          if [[ $(echo $response | jq '.id') == "null" ]]; then
+            echo "User creation failed"
+            exit 1
+          fi
+
+      - name: Login user
+        run: |
+          response=$(curl --location --request POST 'localhost:8080/api/users/login' \
+            --header 'Authorization: Basic Ym9iYTpib2Jh' \
+            --data '')
+          echo "Response: $response"
+          # Check if the login was successful
+          if [[ $(echo $response | jq '.isLoginSuccessful') != "true" ]]; then
+            echo "Login failed"
+            exit 1
+          fi
+
+      - name: Send message
+        run: |
+          response=$(curl --location 'localhost:8080/api/messages' \
+            --header 'Content-Type: application/json' \
+            --header 'Authorization: Basic cGlkcjpwaWRy' \
+            --data '{
+                "content": "Privet loshara",
+                "receiverUsername": "boba"
+            }')
+          echo "Response: $response"
+          # Check if the message was sent successfully
+          if [[ $(echo $response | jq '.content') == "null" ]]; then
+            echo "Message sending failed"
+            exit 1
+          fi
+
+      - name: Verify sent messages
+        run: |
+          response=$(curl --location --request POST 'localhost:8080/api/messages/sent' \
+            --header 'Authorization: Basic cGlkcjpwaWRy' \
+            --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7')
+          echo "Response: $response"
+          # Check if the message is in the sent messages list
+          if [[ $(echo $response | jq '.[].content' | grep -c "Privet loshara") -eq 0 ]]; then
+            echo "Message not found in sent messages"
+            exit 1
+          fi
+
+      - name: Create another user
+        run: |
+          response=$(curl --location 'localhost:8080/api/users' \
+            --header 'Content-Type: application/json' \
+            --data '{
+                "username": "newuser",
+                "password": "newuser"
+            }')
+          echo "Response: $response"
+          # Check if the user was created successfully
+          if [[ $(echo $response | jq '.id') == "null" ]]; then
+            echo "User creation failed"
+            exit 1
+          fi
+
+      - name: Verify received messages
+        run: |
+          response=$(curl --location --request POST 'localhost:8080/api/messages/received' \
+            --header 'Authorization: Basic cGlkcjpwaWRy' \
+            --header 'Cookie: JSESSIONID=BCF7925F43CA992DDA6058165165B3E7')
+          echo "Response: $response"
+          # Check if the new user received the message
+          if [[ $(echo $response | jq '.[].content' | grep -c "Privet loshara") -eq 0 ]]; then
+            echo "Message not found in received messages"
+            exit 1
+          fi
